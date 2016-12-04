@@ -1,0 +1,9 @@
+[push]
+	default = simple
+[user]
+	name = lihuanpeng
+	email = huanpenglee@gmail.com
+[color]
+	ui = auto
+[http]
+	cookiefile = /home/lihuanpeng/.gitcookies
