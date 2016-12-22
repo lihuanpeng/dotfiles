@@ -49,19 +49,14 @@
     Bundle 'gcmt/wildfire.vim'
 
     " Writing
-    Bundle 'reedes/vim-litecorrect'
     Bundle 'reedes/vim-textobj-sentence'
     Bundle 'reedes/vim-textobj-quote'
-    Bundle 'reedes/vim-wordy'
 
     " General Programming
     " Pick one of the checksyntax, jslint, or syntastic
     Bundle 'scrooloose/syntastic'
     Bundle 'tpope/vim-fugitive'
-    Bundle 'mattn/webapi-vim'
-    Bundle 'mattn/gist-vim'
     Bundle 'scrooloose/nerdcommenter'
-    Bundle 'tpope/vim-commentary'
     Bundle 'godlygeek/tabular'
     if executable('ctags')
         Bundle 'majutsushi/tagbar'
@@ -72,7 +67,6 @@
     Bundle 'Shougo/neosnippet'
     Bundle 'Shougo/neosnippet-snippets'
     Bundle 'honza/vim-snippets'
-
 
     " Python
     " Pick either python-mode or pyflakes & pydoc
@@ -106,9 +100,4 @@
 
     " Misc
     Bundle 'tpope/vim-markdown'
-    Bundle 'spf13/vim-preview'
-    Bundle 'tpope/vim-cucumber'
-    Bundle 'cespare/vim-toml'
-    Bundle 'quentindecock/vim-cucumber-align-pipes'
-    Bundle 'saltstack/salt-vim'
 " }
