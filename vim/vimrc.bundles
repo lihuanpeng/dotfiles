@@ -10,20 +10,9 @@
     " }
 
     " Setup Bundle Support {
-        " The next three lines ensure that the ~/.vim/bundle/ system works
         filetype off
         set rtp+=~/.vim/bundle/vundle
         call vundle#rc()
-    " }
-
-    " Add an UnBundle command {
-    function! UnBundle(arg, ...)
-      let bundle = vundle#config#init_bundle(a:arg, a:000)
-      call filter(g:vundle#bundles, 'v:val["name_spec"] != "' . a:arg . '"')
-    endfunction
-
-    com! -nargs=+         UnBundle
-    \ call UnBundle(<args>)
     " }
 
 " }
@@ -46,7 +35,9 @@
     " }
 
     if !exists('g:bundle_groups')
-        let g:bundle_groups=['general', 'writing', 'programming', 'neocomplete', 'python', 'javascript', 'html', 'misc',]
+        let g:bundle_groups=['general', 'writing', 'programming',
+            \ 'neocomplete', 'python', 'javascript', 'html', 'misc',
+            \ 'java']
     endif
 
     " General {
@@ -155,6 +146,12 @@
         if count(g:bundle_groups, 'go')
             "Bundle 'Blackrush/vim-gocode'
             Bundle 'fatih/vim-go'
+        endif
+    " }
+
+    " Java {
+        if count(g:bundle_groups, 'java')
+            Bundle 'artur-shaik/vim-javacomplete2'
         endif
     " }
 
