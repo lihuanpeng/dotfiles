@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-# Important: not complete, dont use it.
 
 ############################  SETUP PARAMETERS
 app_name='dotfiles'
@@ -7,7 +6,7 @@ app_name='dotfiles'
 [ -z "$REPO_URI" ] && REPO_URI='https://github.com/huanpenglee/dotfiles.git'
 [ -z "$REPO_BRANCH" ] && REPO_BRANCH='master'
 debug_mode='0'
-[ -z "$VUNDLE_URI" ] && VUNDLE_URI="https://github.com/gmarik/vundle.git"
+[ -z "$VUNDLE_URI" ] && VUNDLE_URI="http://github.com/VundleVim/Vundle.Vim"
 
 ############################  BASIC SETUP TOOLS
 msg() {
@@ -66,16 +65,13 @@ lnif() {
 ############################ SETUP FUNCTIONS
 
 do_backup() {
-    if [ -e "$1" ] || [ -e "$2" ] || [ -e "$3" ]; then
-        msg "Attempting to back up your original vim configuration."
+    if [ -e "$1" ]; then
         today=`date +%Y%m%d_%s`
-        for i in "$1" "$2" "$3"; do
-            [ -e "$i" ] && [ ! -L "$i" ] && mv -v "$i" "$i.$today";
-        done
+        [ -e "$1" ] && [ ! -L "$1" ] && mv -v "$1" "$1.$today";
         ret="$?"
-        success "Your original vim configuration has been backed up."
+        success "Your original $1 has been backed up."
         debug
-   fi
+    fi
 }
 
 sync_repo() {
@@ -97,25 +93,10 @@ sync_repo() {
     debug
 }
 
-create_symlinks() {
-    local source_path="$1"
-    local target_path="$2"
-
-    lnif "$source_path/vim/vimrc"         "$target_path/.vimrc"
-    lnif "$source_path/vim/vimrc.bundles" "$target_path/.vimrc.bundles"
-    lnif "$source_path/zshrc"             "$target_path/.zshrc"
-    lnif "$source_path/tmux/tmux.conf"    "$target_path/.tmux.conf"
-    lnif "$source_path/gitconfig"         "$target_path/.gitconfig"
-
-    ret="$?"
-    success "Setting up vim symlinks."
-    debug
-}
-
 setup_vundle() {
     local system_shell="$SHELL"
     export SHELL='/bin/sh'
-    vim -u "$1" "+set nomore" "+BundleInstall!" "+BundleClean" "+qall"
+    vim -u "$1" "+set nomore" "+PluginInstall!" "+PluginClean" "+qall"
     export SHELL="$system_shell"
     success "Now updating/installing plugins using Vundle"
     debug
@@ -125,14 +106,24 @@ setup_vundle() {
 variable_set "$HOME"
 program_must_exist "vim"
 program_must_exist "git"
+program_must_exist "tmux"
 
-do_backup "$HOME/.vim" "$HOME/.vimrc" "$HOME/.zshrc"
+do_backup "$HOME/.vim"
+do_backup "$HOME/.vimrc"
+do_backup "$HOME/.vimrc.bundles"
+do_backup "$HOME/.zhsrc"
+do_backup "$HOME/.tmux.conf"
+do_backup "$HOME/.gitconfig"
 
-create_symlinks "$APP_PATH" "$HOME"
+msg "\nCreate symlinks."
+lnif "$APP_PATH/vim/vimrc"         "$HOME/.vimrc"
+lnif "$APP_PATH/vim/vimrc.bundles" "$HOME/.vimrc.bundles"
+lnif "$APP_PATH/zshrc"             "$HOME/.zshrc"
+lnif "$APP_PATH/tmux/tmux.conf"    "$HOME/.tmux.conf"
+lnif "$APP_PATH/gitconfig"         "$HOME/.gitconfig"
 
-sync_repo "$HOME/.vim/bundle/vundle" "$VUNDLE_URI" "master" "vundle"
+sync_repo "$HOME/.vim/bundle/Vundle.vim" "$VUNDLE_URI" "master" "Vundle"
 
 setup_vundle "$APP_PATH/vim/vimrc.bundles"
 
 msg "\nThanks for installing $app_name."
-msg "© `date +%Y` http://vim.spf13.com/"
