@@ -23,12 +23,18 @@ export EDITOR='vim'
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"
 
+# my linode IP
+export LINODE="139.162.125.45"
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes.
 alias ll="ls -lhGF"
 alias la="ls -lahGF"
+alias cp="cp -i"
+alias rm="rm -i"
+alias mv="mv -i"
 alias workstation="ssh lihuanpeng@192.168.199.190"
-alias clonesite="wget -r -p -np -k"
+alias mylinode="ssh lihuanpeng@139.162.125.45"
 
 # Diffrent system has diffrent configure
 # for osx, debian, freebsd
