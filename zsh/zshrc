@@ -37,7 +37,7 @@ alias workstation="ssh lihuanpeng@192.168.199.190"
 alias mylinode="ssh lihuanpeng@139.162.125.45"
 
 # Diffrent system has diffrent configure
-# for osx, debian, freebsd
+# for macbook-pro with osx
 if [ $(uname) = "Darwin" ]; then
     # for osx
     alias wwwroot="cd /Library/WebServer/Documents"
@@ -45,8 +45,10 @@ if [ $(uname) = "Darwin" ]; then
     # those two lines for CUDA environment
     export PATH=/Developer/NVIDIA/CUDA-8.0/bin${PATH:+:${PATH}}
     export LD_LIBRARY_PATH=/Developer/NVIDIA/CUDA-8.0/lib${DYLD_LIBRARY_PATH:+:${DYLD_LIBRARY_PATH}}
-elif [ $(uname) = "Linux" ]; then
-    # for my machine on debian
+fi
+
+# for workstation with debian.
+if [ $(hostname) = "workstation" ]; then
     # those two lines for CUDA environment
     export PATH=/usr/local/cuda-8.0/bin${PATH:+:${PATH}}
     export LD_LIBRARY_PATH=/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
