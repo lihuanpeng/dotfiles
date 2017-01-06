@@ -6,8 +6,8 @@ function installVPN(){
 	apt-get -y remove pptpd
 	
 	apt-get -y install pptpd
-	echo ms-dns 208.67.222.222 >> /etc/ppp/pptpd-options
-	echo ms-dns 208.67.220.220 >> /etc/ppp/pptpd-options
+	echo ms-dns 8.8.8.8 >> /etc/ppp/pptpd-options
+	echo ms-dns 8.8.4.4 >> /etc/ppp/pptpd-options
 	echo localip 192.168.99.1 >> /etc/pptpd.conf
 	echo remoteip 192.168.99.9-99 >> /etc/pptpd.conf
 
