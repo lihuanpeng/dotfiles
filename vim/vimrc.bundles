@@ -105,5 +105,6 @@ Plugin 'artur-shaik/vim-javacomplete2'
 
 " Misc
 Plugin 'tpope/vim-markdown'
+Plugin 'edkolev/tmuxline.vim'
 
 call vundle#end()
