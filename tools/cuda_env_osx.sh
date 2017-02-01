@@ -19,7 +19,7 @@ CLT7_PATH="${CLT_PATH}_7.x"
 CLT8_PATH="${CLT_PATH}_8.x"
 
 # 实际操作部分
-if [ $# >=1 ]; then
+if [ $# = 1 ]; then
     if [ $1 = "on" ]; then
         rm ${CLT_PATH}
         ln -sf ${CLT7_PATH} ${CLT_PATH}
