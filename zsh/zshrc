@@ -35,6 +35,7 @@ alias rm="rm -i"
 alias mv="mv -i"
 alias workstation="ssh lihuanpeng@192.168.199.190"
 alias mylinode="ssh lihuanpeng@139.162.125.45"
+alias clonesite="wget -c -r -np -k -L -p"
 
 # Diffrent system has diffrent configure
 # for macbook-pro with osx
