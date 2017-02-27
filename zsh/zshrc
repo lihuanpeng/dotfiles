@@ -15,7 +15,7 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 source $ZSH/oh-my-zsh.sh
 
 # set language environment
-export LANG=zh_CN.UTF-8
+# export LANG=zh_CN.UTF-8
 
 # set default editor
 export EDITOR='vim'
