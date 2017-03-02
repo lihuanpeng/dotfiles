@@ -8,8 +8,8 @@ ZSH_THEME="my"
 plugins=(git osx)
 
 # User configuration
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-# export MANPATH="/usr/local/man:$MANPATH"
+PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+MANPATH="/usr/local/man:$MANPATH"
 
 # bootstrap zsh
 source $ZSH/oh-my-zsh.sh
@@ -41,20 +41,25 @@ if [ $(uname) = "Darwin" ]; then
     alias wwwroot="cd /Library/WebServer/Documents"
     alias cleanqq="rm -rf /Users/lihuanpeng/Library/Containers/com.tencent.qq/Data/Library/Application\ Support/QQ/2705313595/Image"
     # those two lines for CUDA environment
-    export PATH=/Developer/NVIDIA/CUDA-8.0/bin${PATH:+:${PATH}}
-    export LD_LIBRARY_PATH=/Developer/NVIDIA/CUDA-8.0/lib${DYLD_LIBRARY_PATH:+:${DYLD_LIBRARY_PATH}}
+    PATH="/Developer/NVIDIA/CUDA-8.0/bin:$PATH"
+    LD_LIBRARY_PATH="/Developer/NVIDIA/CUDA-8.0/lib:$LD_LIBRARY_PATH"
     # for Qt env
+    PATH="/Applications/Qt5.8.0/5.8/clang_64/bin:$PATH"
+    LD_LIBRARY_PATH="/Applications/Qt5.8.0/5.8/clang_64/lib:$LD_LIBRARY_PATH"
 fi
 
 # for workstation with debian.
 if [ $(uname) = "Linux" ]; then
     # those two lines for CUDA environment
-    export PATH=/usr/local/cuda-8.0/bin${PATH:+:${PATH}}
-    export LD_LIBRARY_PATH=/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+    PATH="/usr/local/cuda-8.0/bin:$PATH"
+    LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
     # for Qt env
-    export QTDIR=/opt/Qt/5.8/gcc_64
-    export PATH=$PATH:$QTDIR/bin
-    export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$QTDIR/lib
+    PATH="/opt/Qt5.8.0/5.8/gcc_64/bin:$PATH"
+    LD_LIBRARY_PATH="/opt/Qt5.8.0/5.8/gcc_64/lib:$LD_LIBRARY_PATH"
 fi
+
+# export environments
+export PATH
+export LD_LIBRARY_PATH
 
 # end of file
