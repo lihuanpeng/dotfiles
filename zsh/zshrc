@@ -9,10 +9,10 @@ plugins=(git osx)
 
 # User configuration
 PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-MANPATH="/usr/local/man:$MANPATH"
+MANPATH="/usr/local/man:${MANPATH}"
 
 # bootstrap zsh
-source $ZSH/oh-my-zsh.sh
+source ${ZSH}/oh-my-zsh.sh
 
 # set language environment
 # export LANG=zh_CN.UTF-8
@@ -41,25 +41,31 @@ if [ $(uname) = "Darwin" ]; then
     alias wwwroot="cd /Library/WebServer/Documents"
     alias cleanqq="rm -rf /Users/lihuanpeng/Library/Containers/com.tencent.qq/Data/Library/Application\ Support/QQ/2705313595/Image"
     # those two lines for CUDA environment
-    PATH="/Developer/NVIDIA/CUDA-8.0/bin:$PATH"
-    LD_LIBRARY_PATH="/Developer/NVIDIA/CUDA-8.0/lib:$LD_LIBRARY_PATH"
+    PATH="/Developer/NVIDIA/CUDA-8.0/bin:${PATH}"
+    LD_LIBRARY_PATH="/Developer/NVIDIA/CUDA-8.0/lib:${LD_LIBRARY_PATH}"
     # for Qt env
-    PATH="/Applications/Qt5.8.0/5.8/clang_64/bin:$PATH"
-    LD_LIBRARY_PATH="/Applications/Qt5.8.0/5.8/clang_64/lib:$LD_LIBRARY_PATH"
+    PATH="/Applications/Qt5.8.0/5.8/clang_64/bin:${PATH}"
+    LD_LIBRARY_PATH="/Applications/Qt5.8.0/5.8/clang_64/lib:${LD_LIBRARY_PATH}"
 fi
 
 # for workstation with debian.
 if [ $(uname) = "Linux" ]; then
     # those two lines for CUDA environment
-    PATH="/usr/local/cuda-8.0/bin:$PATH"
-    LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
+    PATH="/usr/local/cuda-8.0/bin:${PATH}"
+    LD_LIBRARY_PATH="/usr/local/cuda/lib64:${LD_LIBRARY_PATH}"
     # for Qt env
-    PATH="/opt/Qt5.8.0/5.8/gcc_64/bin:$PATH"
-    LD_LIBRARY_PATH="/opt/Qt5.8.0/5.8/gcc_64/lib:$LD_LIBRARY_PATH"
+    PATH="/opt/Qt5.8.0/5.8/gcc_64/bin:${PATH}"
+    LD_LIBRARY_PATH="/opt/Qt5.8.0/5.8/gcc_64/lib:${LD_LIBRARY_PATH}"
+    # for java
+    export JAVA_HOME="/usr/lib/jvm/jdk1.8.0_121"
+    export JRE_HOME="${JAVA_HOME}/jre"
+    export CLASSPATH="${JAVA_HOME}/lib64:${JRE_HOME}/lib64"
+    PATH="${JAVA_HOME}/bin:${PATH}"
 fi
 
 # export environments
 export PATH
 export LD_LIBRARY_PATH
+export REPO_URL='https://mirrors.tuna.tsinghua.edu.cn/git/git-repo/'
 
-# end of file
+ #end of file
