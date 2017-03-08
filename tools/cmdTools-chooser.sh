@@ -20,20 +20,22 @@ CLT8_PATH="${CLT_PATH}_8.x"
 
 # 实际操作部分
 if [ $# = 1 ]; then
-    if [ $1 = "on" ]; then
+    if [ $1 = "-7" ]; then
         rm ${CLT_PATH}
         ln -sf ${CLT7_PATH} ${CLT_PATH}
         xcode-select -s ${CLT_PATH}
+        xcode-select -p
         success "已将 CommandLineTools 切换为 7.1 版本"
-    elif [ $1 = "off" ]; then
+    elif [ $1 = "-8" ]; then
         rm ${CLT_PATH}
         ln -sf ${CLT8_PATH} ${CLT_PATH}
         xcode-select -r
+        xcode-select -p
         success "已重置 Xcode-select 默认设置"
     else
-        error "参数不正确，请使用 on | off"
+        error "参数不正确，请使用 -7 | -8"
     fi
 else
-    error "参数不正确，请使用 on | off"
+    error "参数不正确，请使用 -7 | -8"
 fi
 
