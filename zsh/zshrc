@@ -1,6 +1,3 @@
-# Path to my common path
-MY_ZSH="/home/lihuanpeng/.dotfiles/zsh"
-
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
 
@@ -37,15 +34,21 @@ alias cp="cp -i"
 alias workstation="ssh lihuanpeng@192.168.199.190"
 alias clonesite="wget -c -r -np -k -L -p"
 
+
+
 # Diffrent system has diffrent configure
 # for macbook-pro with osx
 if [ $(uname) = "Darwin" ]; then
-    source "${MY_ZSH}/macOS.sh"
+    DOTFILE_PATH="/Users/lihuanpeng/.dotfiles"
+    export QTVERSION=4
+    source "${DOTFILE_PATH}/zsh/macOS.sh"
 fi
 
 # for workstation with debian.
 if [ $(uname) = "Linux" ]; then
-    source "${MY_ZSH}/debian.sh"
+    DOTFILE_PATH="/home/lihuanpeng/.dotfiles"
+    export QTVERSION=4
+    source "${DOTFILE_PATH}/zsh/debian.sh"
 fi
 
 # export environments
