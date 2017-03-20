@@ -3,8 +3,13 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible
 set shell=/bin/sh
+
 if filereadable(expand("~/.vimrc.bundles"))
     source ~/.vimrc.bundles
+endif
+
+if filereadable(expand("~/.vimrc.local"))
+    source ~/.vimrc.local
 endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
@@ -55,7 +60,7 @@ endif
 " chose a color scheme and config options
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
-set background=light            " light or dark
+set background=dark            " light or dark
 colorscheme solarized
 
 if has('cmdline_info')
@@ -374,7 +379,6 @@ let g:wildfire_objects = {
 
 " vim-airline {
     " use the symbols , , , , , , and .in the statusline
-    let g:airline_powerline_fonts=1
     if isdirectory(expand("~/.vim/bundle/vim-airline/"))
         if !exists('g:airline_theme')
             let g:airline_theme = 'solarized'
