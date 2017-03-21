@@ -34,8 +34,6 @@ alias cp="cp -i"
 alias workstation="ssh lihuanpeng@192.168.199.190"
 alias clonesite="wget -c -r -np -k -L -p"
 
-
-
 # Diffrent system has diffrent configure
 # for macbook-pro with osx
 if [ $(uname) = "Darwin" ]; then
@@ -56,4 +54,4 @@ export PATH
 export LD_LIBRARY_PATH
 export REPO_URL='https://mirrors.tuna.tsinghua.edu.cn/git/git-repo/'
 
- #end of file
+#end of file
