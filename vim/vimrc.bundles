@@ -29,75 +29,66 @@ endif
 " => Plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General
+" 树形菜单
 Plugin 'scrooloose/nerdtree'
+" 颜色主题
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'spf13/vim-colors'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-repeat'
+" 括号增强插件
 Plugin 'jiangmiao/auto-pairs'
+" 快速查找
 Plugin 'ctrlpvim/ctrlp.vim'
+" 多重选取
 Plugin 'terryma/vim-multiple-cursors'
+" session 管理，保存与恢复工作状态
 Plugin 'vim-scripts/sessionman.vim'
+" 成对标签跳转
 Plugin 'matchit.zip'
+" 底部状态栏
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+" 在状态栏显示打开的buffer
 Plugin 'bling/vim-bufferline'
+" 快速跳转
 Plugin 'easymotion/vim-easymotion'
-Plugin 'jistr/vim-nerdtree-tabs'
+" 缩进提示
 Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'vim-scripts/restore_view.vim'
+" 基于版本管理的代码更改标示
 Plugin 'mhinz/vim-signify'
-Plugin 'tpope/vim-abolish.git'
+" 搜索与替换的高亮提示
 Plugin 'osyo-manga/vim-over'
-Plugin 'kana/vim-textobj-user'
-Plugin 'kana/vim-textobj-indent'
-Plugin 'gcmt/wildfire.vim'
-
-" Writing
-Plugin 'reedes/vim-textobj-sentence'
-Plugin 'reedes/vim-textobj-quote'
 
 " General Programming
 " Pick one of the checksyntax, jslint, or syntastic
+" 语法检查
 Plugin 'scrooloose/syntastic'
-Plugin 'tpope/vim-fugitive'
+" 注释增强插件
 Plugin 'scrooloose/nerdcommenter'
+" 文本对齐插件，强迫症福音
 Plugin 'godlygeek/tabular'
+" 生成源码tags文件
 if executable('ctags')
     Plugin 'majutsushi/tagbar'
 endif
 
-" Snippets & AutoComplete, neocomplete
+" 代码补全框架
 Plugin 'Shougo/neocomplete.vim.git'
 Plugin 'Shougo/neosnippet'
 Plugin 'Shougo/neosnippet-snippets'
 Plugin 'honza/vim-snippets'
 
-" Python
-" Pick either python-mode or pyflakes & pydoc
+" Python 代码提示插件
 Plugin 'klen/python-mode'
-Plugin 'yssource/python.vim'
-Plugin 'python_match.vim'
-Plugin 'pythoncomplete'
 
 " Javascript
 Plugin 'elzr/vim-json'
 Plugin 'pangloss/vim-javascript'
-Plugin 'briancollins/vim-jst'
-
-" Scala
-Plugin 'derekwyatt/vim-scala'
-Plugin 'derekwyatt/vim-sbt'
-Plugin 'xptemplate'
 
 " HTML
 Plugin 'vim-scripts/HTML-AutoCloseTag'
 Plugin 'hail2u/vim-css3-syntax'
-Plugin 'gorodinskiy/vim-coloresque'
-Plugin 'tpope/vim-haml'
 
 " Go Lang, just pick one
-"Plugin 'Blackrush/vim-gocode'
 Plugin 'fatih/vim-go'
 
 " Java
