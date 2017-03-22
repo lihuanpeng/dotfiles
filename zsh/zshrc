@@ -54,4 +54,7 @@ export PATH
 export LD_LIBRARY_PATH
 export REPO_URL='https://mirrors.tuna.tsinghua.edu.cn/git/git-repo/'
 
+# enable `vi mode` in bash
+set -o vi
+
 #end of file
