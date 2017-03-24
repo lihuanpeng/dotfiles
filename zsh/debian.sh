@@ -1,5 +1,5 @@
-# make mouse direction axis
-# xmodmap -e "pointer = 1 2 3 5 4"
+# alias
+alias i3config="vim ~/.i3/config"
 
 # those two lines for CUDA environment
 CUDA_PATH="/usr/local/cuda"
