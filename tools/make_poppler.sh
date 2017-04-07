@@ -16,4 +16,5 @@ if [ $(uname) = "Darwin" ]; then
     export POPPLER_QT4_TEST_LIBS="-L$QTDIR/lib -lz -framework QtCore -framework QtGui -framework QtXml"
 fi
 
+# for qt4
 ./configure --prefix=/Developer/Qt-4.8.6 --enable-poppler-qt4

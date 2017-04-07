@@ -15,7 +15,7 @@ MANPATH="/usr/local/man:${MANPATH}"
 source ${ZSH}/oh-my-zsh.sh
 
 # set language environment
-export LANG=zh_CN.UTF-8
+# export LANG=zh_CN.UTF-8
 
 # set default editor
 export EDITOR='vim'
@@ -38,14 +38,13 @@ alias clonesite="wget -c -r -np -k -L -p"
 # for macbook-pro with osx
 if [ $(uname) = "Darwin" ]; then
     DOTFILE_PATH="/Users/lihuanpeng/.dotfiles"
-    export QTVERSION=4
     source "${DOTFILE_PATH}/zsh/macOS.sh"
 fi
 
 # for workstation with debian.
 if [ $(uname) = "Linux" ]; then
     DOTFILE_PATH="/home/lihuanpeng/.dotfiles"
-    export QTVERSION=4
+    export QTVERSION=5
     source "${DOTFILE_PATH}/zsh/debian.sh"
 fi
 

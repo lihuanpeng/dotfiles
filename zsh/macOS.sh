@@ -7,11 +7,7 @@ PATH="${CUDA_PATH}/bin:${PATH}"
 LD_LIBRARY_PATH="${CUDA_PATH}/lib:${LD_LIBRARY_PATH}"
 
 # for Qt env
-if [ ${QTVERSION} = 4 ]; then
-    export QTDIR="/Developer/Qt-4.8.6"
-elif [ ${QTVERSION} = 5 ]; then
-    export QTDIR="/Applications/Qt5.8.0/5.8/clang_64"
-fi
+export QTDIR="/Applications/Qt5.8.0/5.8/clang_64"
 
 # update PATH
 PATH="${QTDIR}/bin:${PATH}"
