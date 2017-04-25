@@ -15,7 +15,8 @@ MANPATH="/usr/local/man:${MANPATH}"
 source ${ZSH}/oh-my-zsh.sh
 
 # set language environment
-# export LANG=zh_CN.UTF-8
+export LANG=zh_CN.UTF-8
+export LANGUAGE=zh_CN.UTF-8
 
 # set default editor
 export EDITOR='vim'
