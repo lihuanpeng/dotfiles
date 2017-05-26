@@ -37,23 +37,48 @@ alias clonesite="wget -c -r -np -k -L -p"
 # Diffrent system has diffrent configure
 # for macbook-pro with osx
 if [ $(uname) = "Darwin" ]; then
-    DOTFILE_PATH="/Users/lihuanpeng/.dotfiles"
-    source "${DOTFILE_PATH}/zsh/macOS.sh"
+    # for osx
+    alias wwwroot="cd /Library/WebServer/Documents"
+    alias cleanqq="rm -rf /Users/lihuanpeng/Library/Containers/com.tencent.qq/Data/Library/Application\ Support/QQ/2705313595/Image"
+    # those two lines for CUDA environment
+    CUDA_PATH="/Developer/NVIDIA/CUDA-8.0"
+    export PATH="${CUDA_PATH}/bin:${PATH}"
+    export LD_LIBRARY_PATH="${CUDA_PATH}/lib:${LD_LIBRARY_PATH}"
+
+    # for Qt env
+    export QTDIR="/Applications/Qt5.8.0/5.8/clang_64"
+    export PATH="${QTDIR}/bin:${PATH}"
+    export LD_LIBRARY_PATH="${QTDIR}/lib:${LD_LIBRARY_PATH}"
 fi
 
-# for workstation with debian.
+
 if [ $(uname) = "Linux" ]; then
-    DOTFILE_PATH="/home/lihuanpeng/.dotfiles"
-    export QTVERSION=5
-    source "${DOTFILE_PATH}/zsh/debian.sh"
+    # for workstation with debian.
+    # alias
+    alias i3config="vim ~/.i3/config"
+
+    # those two lines for CUDA environment
+    CUDA_PATH="/usr/local/cuda"
+    export PATH="${PATH}:${CUDA_PATH}/bin"
+    export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${CUDA_PATH}/lib64"
+
+    # Qt env
+    export QTDIR="/opt/Qt5.8.0/5.8/gcc_64"
+    export PATH="${PATH}:${QTDIR}/bin"
+    export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${QTDIR}/lib"
+
+    # MATLAB Runtime
+    MLRT_PATH="/opt/MATLAB/MATLAB_Runtime/v92"
+    export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${MLRT_PATH}/runtime/glnxa64:${MLRT_PATH}/bin/glnxa64:${MLRT_PATH}/sys/os/glnxa64"
+    # for java
+    export JAVA_HOME="/usr/lib/jvm/jdk1.8.0_121"
+    export JRE_HOME="${JAVA_HOME}/jre"
+    export CLASSPATH="${JAVA_HOME}/lib64:${JRE_HOME}/lib64"
+    export PATH="${PATH}:${JAVA_HOME}/bin"
 fi
 
 # export environments
-export PATH
-export LD_LIBRARY_PATH
 export REPO_URL='https://mirrors.tuna.tsinghua.edu.cn/git/git-repo/'
 
-# enable `vi mode` in bash
-set -o vi
-
 #end of file
+

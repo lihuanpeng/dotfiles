@@ -77,6 +77,9 @@ Plugin 'Shougo/neosnippet'
 Plugin 'Shougo/neosnippet-snippets'
 Plugin 'honza/vim-snippets'
 
+" CMake 语法高亮
+Plugin 'pboettch/vim-cmake-syntax'
+
 " Python 代码提示插件
 Plugin 'klen/python-mode'
 
