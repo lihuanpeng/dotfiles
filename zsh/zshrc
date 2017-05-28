@@ -57,6 +57,8 @@ if [ $(uname) = "Linux" ]; then
     # alias
     alias i3config="vim ~/.i3/config"
 
+    export LD_LIBRARY_PATH="/lib:/lib64:/lib32:/usr/local/lib:/usr/local/lib64:/usr/local/lib32"
+
     # those two lines for CUDA environment
     CUDA_PATH="/usr/local/cuda"
     export PATH="${PATH}:${CUDA_PATH}/bin"
