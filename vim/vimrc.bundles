@@ -40,8 +40,6 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'ctrlpvim/ctrlp.vim'
 " 多重选取
 Plugin 'terryma/vim-multiple-cursors'
-" session 管理，保存与恢复工作状态
-Plugin 'vim-scripts/sessionman.vim'
 " 成对标签跳转
 Plugin 'matchit.zip'
 " 底部状态栏
@@ -70,29 +68,11 @@ Plugin 'godlygeek/tabular'
 if executable('ctags')
     Plugin 'majutsushi/tagbar'
 endif
-
-" CMake 语法高亮
-Plugin 'pboettch/vim-cmake-syntax'
-
-" Python 代码提示插件
-Plugin 'klen/python-mode'
-
-" Javascript
-Plugin 'elzr/vim-json'
-Plugin 'pangloss/vim-javascript'
-
-" HTML
-Plugin 'vim-scripts/HTML-AutoCloseTag'
-Plugin 'hail2u/vim-css3-syntax'
-
-" Go Lang, just pick one
-Plugin 'fatih/vim-go'
-
-" Java
-Plugin 'artur-shaik/vim-javacomplete2'
-
 " Misc
 Plugin 'tpope/vim-markdown'
 Plugin 'edkolev/tmuxline.vim'
+
+" CMake 语法高亮
+Plugin 'pboettch/vim-cmake-syntax'
 
 call vundle#end()
