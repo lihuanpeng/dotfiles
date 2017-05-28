@@ -1,5 +1,0 @@
-"
-" The local config
-
-" For airline fonts
-let g:airline_powerline_fonts = 0
