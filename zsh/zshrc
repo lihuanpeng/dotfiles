@@ -71,7 +71,7 @@ if [ $(uname) = "Linux" ]; then
     export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${QTDIR}/lib"
 
     # MATLAB Runtime
-    MLRT_PATH="/opt/MATLAB/MATLAB_Runtime/v92"
+    export MLRT_PATH="/opt/MATLAB/MATLAB_Runtime/v92"
     #export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${MLRT_PATH}/runtime/glnxa64:${MLRT_PATH}/bin/glnxa64:${MLRT_PATH}/sys/os/glnxa64"
     # for java
     export JAVA_HOME="/usr/lib/jvm/jdk1.8.0_121"
