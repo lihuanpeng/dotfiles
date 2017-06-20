@@ -46,7 +46,7 @@ if [ $(uname) = "Darwin" ]; then
     export LD_LIBRARY_PATH="${CUDA_PATH}/lib:${LD_LIBRARY_PATH}"
 
     # for Qt env
-    export QTDIR="/Applications/Qt5.8.0/5.8/clang_64"
+    export QTDIR="/Applications/Qt5.9.x/5.9/clang_64"
     export PATH="${QTDIR}/bin:${PATH}"
     export LD_LIBRARY_PATH="${QTDIR}/lib:${LD_LIBRARY_PATH}"
 fi
