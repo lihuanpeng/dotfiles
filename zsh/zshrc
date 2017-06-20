@@ -4,15 +4,58 @@ export ZSH=~/.oh-my-zsh
 # Set name of the theme to load. Look in ~/.oh-my-zsh/themes/
 ZSH_THEME="my"
 
-# Used plugins
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
+
+# Uncomment the following line to use hyphen-insensitive completion. Case
+# sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
+
+# Uncomment the following line to disable bi-weekly auto-update checks.
+# DISABLE_AUTO_UPDATE="true"
+
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
 plugins=(git osx)
+
+source ${ZSH}/oh-my-zsh.sh
 
 # User configuration
 PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 MANPATH="/usr/local/man:${MANPATH}"
 
-# bootstrap zsh
-source ${ZSH}/oh-my-zsh.sh
+# ssh
+# export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # set language environment
 export LANG=zh_CN.UTF-8
@@ -52,12 +95,13 @@ if [ $(uname) = "Darwin" ]; then
 fi
 
 
+# TODO: 不再根据操作系统类型来设置平台专有环境，改为根据hostname设置各自环境
 if [ $(uname) = "Linux" ]; then
     # for workstation with debian.
+    export LD_LIBRARY_PATH="/lib:/lib64:/lib32:/usr/local/lib:/usr/local/lib64:/usr/local/lib32"
+
     # alias
     alias i3config="vim ~/.i3/config"
-
-    export LD_LIBRARY_PATH="/lib:/lib64:/lib32:/usr/local/lib:/usr/local/lib64:/usr/local/lib32"
 
     # those two lines for CUDA environment
     CUDA_PATH="/usr/local/cuda"
@@ -65,13 +109,14 @@ if [ $(uname) = "Linux" ]; then
     export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${CUDA_PATH}/lib64"
 
     # Qt env
-    export QTDIR="/opt/Qt5.8.0/5.8/gcc_64"
+    export QT_SELECT="Qt5.9"
+    export QTDIR="/opt/Qt5.9.x/5.9/gcc_64"
     export PATH="${PATH}:${QTDIR}/bin"
     export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${QTDIR}/lib"
 
     # MATLAB Runtime
-    MLRT_PATH="/opt/MATLAB/MATLAB_Runtime/v92"
-    export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${MLRT_PATH}/runtime/glnxa64:${MLRT_PATH}/bin/glnxa64:${MLRT_PATH}/sys/os/glnxa64"
+    export MLRT_PATH="/opt/MATLAB/MATLAB_Runtime/v92"
+    #export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${MLRT_PATH}/runtime/glnxa64:${MLRT_PATH}/bin/glnxa64:${MLRT_PATH}/sys/os/glnxa64"
     # for java
     export JAVA_HOME="/usr/lib/jvm/jdk1.8.0_121"
     export JRE_HOME="${JAVA_HOME}/jre"
@@ -83,4 +128,3 @@ fi
 export REPO_URL='https://mirrors.tuna.tsinghua.edu.cn/git/git-repo/'
 
 #end of file
-
