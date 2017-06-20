@@ -52,6 +52,7 @@ if [ $(uname) = "Darwin" ]; then
 fi
 
 
+# TODO: 不再根据操作系统类型来设置平台专有环境，改为根据hostname设置各自环境
 if [ $(uname) = "Linux" ]; then
     # for workstation with debian.
     export LD_LIBRARY_PATH="/lib:/lib64:/lib32:/usr/local/lib:/usr/local/lib64:/usr/local/lib32"
