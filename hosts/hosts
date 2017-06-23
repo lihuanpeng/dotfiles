@@ -10,6 +10,10 @@ ff02::2 ip6-allrouters
 192.168.0.25 macbook-pro.local macbook-pro
 192.168.0.50 workstation.local workstation
 192.168.0.75 atlassian.local atlassian
+192.168.0.75 confluence.local confluence
+192.168.0.75 jira-software.local jira-software
+192.168.0.75 bitbucket.local bitbucket
+192.168.0.75 bamboo.local bamboo
 
 # Google Start
 220.255.2.153 www.googlesource.com
