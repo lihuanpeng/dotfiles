@@ -94,24 +94,13 @@ if [ $(uname) = "Darwin" ]; then
     export LD_LIBRARY_PATH="${QTDIR}/lib:${LD_LIBRARY_PATH}"
 fi
 
-
-# TODO: 不再根据操作系统类型来设置平台专有环境，改为根据hostname设置各自环境
 if [ $(uname) = "Linux" ]; then
     # tesseract
     export TESSDATA_PREFIX="/usr/share/tesseract-ocr/tessdata"
     #export TESSDATA_PREFIX="/usr/local/share"
     #export TESSDATA_PREFIX="/usr/local/share/tesseract-ocr/tessdata"
 
-    # for workstation with debian.
     export LD_LIBRARY_PATH="/lib:/lib64:/usr/lib:/usr/local/lib"
-
-    # alias
-    alias i3config="vim ~/.i3/config"
-
-    # those two lines for CUDA environment
-    CUDA_PATH="/usr/local/cuda"
-    export PATH="${PATH}:${CUDA_PATH}/bin"
-    export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${CUDA_PATH}/lib64"
 
     # Qt env
     export QT_SELECT="Qt5.9"
@@ -124,6 +113,15 @@ if [ $(uname) = "Linux" ]; then
     export JRE_HOME="${JAVA_HOME}/jre"
     export CLASSPATH="${JAVA_HOME}/lib64:${JRE_HOME}/lib64"
     export PATH="${PATH}:${JAVA_HOME}/bin"
+
+    if [ $(hostname) = "workstation" ]; then
+        # alias
+        alias i3config="vim ~/.i3/config"
+        # those two lines for CUDA environment
+        CUDA_PATH="/usr/local/cuda"
+        export PATH="${PATH}:${CUDA_PATH}/bin"
+        export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${CUDA_PATH}/lib64"
+    fi
 fi
 
 # export environments
