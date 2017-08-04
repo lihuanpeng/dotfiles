@@ -107,6 +107,7 @@ variable_set "$HOME"
 program_must_exist "vim"
 program_must_exist "git"
 program_must_exist "tmux"
+program_must_exist "zsh"
 
 do_backup "$HOME/.vim"
 do_backup "$HOME/.vimrc"
