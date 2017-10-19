@@ -7,15 +7,15 @@ ff02::1 ip6-allnodes
 ff02::2 ip6-allrouters
 
 # local network
-192.168.0.25 macbook-pro.local
-192.168.0.50 workstation.local
-192.168.0.50 bitbucket.local
+192.168.0.25 macbook-pro.local macbook-pro
+192.168.0.50 workstation.local workstation
+192.168.0.50 bitbucket.local bitbucket
 
 # towen network
-192.168.0.75 project-srv.towen
-192.168.0.75 confluence.towen
-192.168.0.75 jira.towen
-192.168.0.75 bitbucket.towen
+192.168.0.75 project-srv.towen project-srv
+192.168.0.75 confluence.towen confluence
+192.168.0.75 jira.towen jira
+192.168.0.75 bitbucket.towen bitbucket
 
 # Google Start
 220.255.2.153 www.googlesource.com
