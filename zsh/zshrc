@@ -3,7 +3,6 @@ export ZSH=~/.oh-my-zsh
 
 # Set name of the theme to load. Look in ~/.oh-my-zsh/themes/
 ZSH_THEME="my"
-
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -89,7 +88,7 @@ if [ $(uname) = "Darwin" ]; then
     export LD_LIBRARY_PATH="${CUDA_PATH}/lib:${LD_LIBRARY_PATH}"
 
     # for Qt env
-    export QTDIR="/Applications/Qt5.9.x/5.9/clang_64"
+    export QTDIR="/Applications/Qt5.9.1/5.9/clang_64"
     export PATH="${QTDIR}/bin:${PATH}"
     export LD_LIBRARY_PATH="${QTDIR}/lib:${LD_LIBRARY_PATH}"
 fi
@@ -101,7 +100,7 @@ if [ $(uname) = "Linux" ]; then
 
     # Qt env
     export QT_SELECT="Qt5.9"
-    export QTDIR="/opt/Qt5.9.0/5.9/gcc_64"
+    export QTDIR="/opt/Qt5.9.1/5.9/gcc_64"
     export PATH="${PATH}:${QTDIR}/bin"
     export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${QTDIR}/lib"
 
@@ -111,7 +110,7 @@ if [ $(uname) = "Linux" ]; then
     export CLASSPATH="${JAVA_HOME}/lib64:${JRE_HOME}/lib64"
     export PATH="${PATH}:${JAVA_HOME}/bin"
 
-    # for anaconda3
+    # path for anaconda3
     export PATH="/opt/anaconda3/bin:${PATH}"
 
     if [ $(hostname) = "workstation" ]; then
