@@ -9,6 +9,7 @@
 	cookiefile = /home/lihuanpeng/.gitcookies
 [core]
 	excludesfile = /Users/lihuanpeng/.gitignore_global
+	autocrlf = input
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 

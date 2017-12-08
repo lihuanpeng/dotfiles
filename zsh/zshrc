@@ -105,13 +105,10 @@ if [ $(uname) = "Linux" ]; then
     export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${QTDIR}/lib"
 
     # for java
-    export JAVA_HOME="/usr/lib/jvm/jdk_1.7.0_80"
+    export JAVA_HOME="/usr/lib/jvm/default-java"
     export JRE_HOME="${JAVA_HOME}/jre"
     export CLASSPATH="${JAVA_HOME}/lib64:${JRE_HOME}/lib64"
     export PATH="${PATH}:${JAVA_HOME}/bin"
-
-    # path for anaconda3
-    export PATH="/opt/anaconda3/bin:${PATH}"
 
     if [ $(hostname) = "workstation" ]; then
         # alias
