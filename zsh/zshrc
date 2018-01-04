@@ -78,6 +78,9 @@ alias la="ls -lahGF"
 alias cp="cp -i"
 alias clonesite="wget -c -r -np -k -L -p"
 
+# some useful command for office work
+alias mount-training-nfs="sudo mount -t nfs 172.16.0.24:/home/lihuanpeng ~/training-nfs"
+
 # Diffrent system has diffrent configure
 # for macbook-pro with osx
 if [ $(uname) = "Darwin" ]; then
