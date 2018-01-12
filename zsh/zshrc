@@ -99,6 +99,16 @@ if [ $(uname) = "Darwin" ]; then
 fi
 
 if [ $(uname) = "Linux" ]; then
+    # for user dir.
+    export Public="公共"
+    export Templates="模板"
+    export Videos="视频"
+    export Pictures="图片"
+    export Documents="文档"
+    export Downloads="下载"
+    export Music="音乐"
+    export Desktop="桌面"
+
     # tesseract
     export TESSDATA_PREFIX="/usr/local/share/tessdata"
     export LD_LIBRARY_PATH="/lib:/lib64:/usr/lib:/usr/local/lib"
