@@ -1,5 +1,5 @@
 # 注释掉的两项旧稳定版仓库地址在 source.list.d 文件夹中也存在
-# 两个地方有其中一个地方的生命生效即可，否则apt会报错：重复定义仓库地址
+# 两个地方有其中一个地方的声明生效即可，否则apt会报错：重复定义仓库地址
 # 在这里保留注释是为了提醒自己曾经定义过旧仓库地址兼容
 # wheezy
 #deb http://mirrors.ustc.edu.cn/debian/ wheezy main contrib non-free
