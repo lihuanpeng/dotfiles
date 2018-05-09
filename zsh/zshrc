@@ -78,6 +78,9 @@ alias la="ls -lahGF"
 alias cp="cp -i"
 alias clonesite="wget -c -r -np -k -L -p"
 
+# some useful command for office work
+alias mount-training-nfs="sudo mount -t nfs 172.16.0.24:/home/lihuanpeng ~/training-nfs"
+
 # Diffrent system has diffrent configure
 # for macbook-pro with osx
 if [ $(uname) = "Darwin" ]; then
@@ -96,6 +99,16 @@ if [ $(uname) = "Darwin" ]; then
 fi
 
 if [ $(uname) = "Linux" ]; then
+    # for user dir.
+    export Public="公共"
+    export Templates="模板"
+    export Videos="视频"
+    export Pictures="图片"
+    export Documents="文档"
+    export Downloads="下载"
+    export Music="音乐"
+    export Desktop="桌面"
+
     # tesseract
     export TESSDATA_PREFIX="/usr/local/share/tessdata"
     export LD_LIBRARY_PATH="/lib:/lib64:/usr/lib:/usr/local/lib"
