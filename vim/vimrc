@@ -305,7 +305,7 @@ endfunction
 
 " Initialize directories
 function! InitializeDirectories()
-    let parent = $HOME . '/' . '.cache'
+    let parent = $HOME . '/' . '.vim'
     let dir_list = {
                 \ 'backup': 'backupdir',
                 \ 'views': 'viewdir',
