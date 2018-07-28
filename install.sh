@@ -117,12 +117,11 @@ do_backup "$HOME/.tmux.conf"
 do_backup "$HOME/.gitconfig"
 
 msg "\nCreate symlinks."
-lnif "$APP_PATH/vim/vimrc"         "$HOME/.vimrc"
-lnif "$APP_PATH/vim/vimrc.bundles" "$HOME/.vimrc.bundles"
-lnif "$APP_PATH/zsh/zshrc"         "$HOME/.zshrc"
-lnif "$APP_PATH/zsh/my.zsh-theme"  "$HOME/.oh-my-zsh/custom/my.zsh-theme"
-lnif "$APP_PATH/tmux/tmux.conf"    "$HOME/.tmux.conf"
-lnif "$APP_PATH/gitconfig"         "$HOME/.gitconfig"
+lnif "$APP_PATH/vimrc"         "$HOME/.vimrc"
+lnif "$APP_PATH/vimrc.bundles" "$HOME/.vimrc.bundles"
+lnif "$APP_PATH/zshrc"         "$HOME/.zshrc"
+lnif "$APP_PATH//tmux.conf"    "$HOME/.tmux.conf"
+lnif "$APP_PATH/gitconfig"     "$HOME/.gitconfig"
 
 sync_repo "$HOME/.vim/bundle/Vundle.vim" "$VUNDLE_URI" "master" "Vundle"
 
