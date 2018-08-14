@@ -1,8 +1,15 @@
 [push]
 	default = simple
 [user]
-	name = lihuanpeng
+	name = huanpenglee
 	email = huanpenglee@gmail.com
 [color]
 	ui = auto
 
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[core]
+	autocrlf = input

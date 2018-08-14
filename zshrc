@@ -79,8 +79,8 @@ alias clonesite="wget -c -r -np -k -L -p"
 alias mount-training-nfs="sudo mount -t nfs 172.16.0.24:/home/lihuanpeng ~/training-nfs"
 
 # proxy
-#export http_proxy=http://127.0.0.1:1087;
-#export https_proxy=http://127.0.0.1:1087;
+# export http_proxy=http://127.0.0.1:1087;
+# export https_proxy=http://127.0.0.1:1087;
 
 
 # Diffrent system has diffrent configure
@@ -89,6 +89,10 @@ if [ $(uname) = "Darwin" ]; then
     # for osx
     alias wwwroot="cd /Library/WebServer/Documents"
     alias cleanqq="rm -rf /Users/lihuanpeng/Library/Containers/com.tencent.qq/Data/Library/Application\ Support/QQ/2705313595/Image"
+
+    # for mysql
+    export PATH="/usr/local/mysql/bin:${PATH}"
+
     # those two lines for CUDA environment
     CUDA_PATH="/Developer/NVIDIA/CUDA-9.2"
     export PATH="${CUDA_PATH}/bin:${PATH}"
