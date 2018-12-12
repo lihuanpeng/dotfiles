@@ -75,20 +75,16 @@ alias la="ls -lahGF"
 alias cp="cp -i"
 alias clonesite="wget -c -r -np -k -L -p"
 
-# some useful command for office work
-alias mount-training-nfs="sudo mount -t nfs 172.16.0.24:/home/lihuanpeng ~/training-nfs"
-
 # proxy
-# export http_proxy=http://127.0.0.1:1087;
-# export https_proxy=http://127.0.0.1:1087;
+export http_proxy=http://127.0.0.1:1087;
+export https_proxy=http://127.0.0.1:1087;
 
+export LINODE="192.155.83.252"
 
 # Diffrent system has diffrent configure
 # for macbook-pro with osx
 if [ $(uname) = "Darwin" ]; then
-    # for osx
     alias wwwroot="cd /Library/WebServer/Documents"
-    alias cleanqq="rm -rf /Users/lihuanpeng/Library/Containers/com.tencent.qq/Data/Library/Application\ Support/QQ/2705313595/Image"
 
     # for mysql
     export PATH="/usr/local/mysql/bin:${PATH}"
@@ -102,6 +98,27 @@ if [ $(uname) = "Darwin" ]; then
     export QTDIR="/Applications/Qt5.11.0/5.11.0/clang_64"
     export PATH="${QTDIR}/bin:${PATH}"
     export LD_LIBRARY_PATH="${QTDIR}/lib:${LD_LIBRARY_PATH}"
+
+    # for php composer
+    export PATH="/Users/lihuanpeng/.composer/vendor/bin:${PATH}"
+
+    # <<< conda init <<<
+    # added by Anaconda3 5.3.0 installer
+    # >>> conda init >>>
+    # !! Contents within this block are managed by 'conda init' !!
+    __conda_setup="$(CONDA_REPORT_ERRORS=false '/Developer/anaconda3/bin/conda' shell.bash hook 2> /dev/null)"
+    if [ $? -eq 0 ]; then
+        eval "$__conda_setup"
+    else
+        if [ -f "/Developer/anaconda3/etc/profile.d/conda.sh" ]; then
+            . "/Developer/anaconda3/etc/profile.d/conda.sh"
+            CONDA_CHANGEPS1=false conda activate base
+        else
+            export PATH="/Developer/anaconda3/bin:$PATH"
+        fi
+    fi
+    unset __conda_setup
+    # <<< conda init <<<
 fi
 
 if [ $(uname) = "Linux" ]; then
@@ -112,14 +129,14 @@ if [ $(uname) = "Linux" ]; then
     # Qt env
     export QT_SELECT="Qt5.11.0"
     export QTDIR="/opt/Qt5.11.0/5.11.0/gcc_64"
-    export PATH="${PATH}:${QTDIR}/bin"
+    export PATH="${QTDIR}/bin:${PATH}"
     export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${QTDIR}/lib"
 
     # for java
     export JAVA_HOME="/usr/lib/jvm/default-java"
     export JRE_HOME="${JAVA_HOME}/jre"
     export CLASSPATH="${JAVA_HOME}/lib:${JRE_HOME}/lib"
-    export PATH="${PATH}:${JAVA_HOME}/bin"
+    export PATH="${JAVA_HOME}/bin:${PATH}"
 
     # alias
     alias i3config="vim ~/.i3/config"
@@ -141,3 +158,4 @@ fi
 export REPO_URL='https://mirrors.tuna.tsinghua.edu.cn/git/git-repo/'
 
 #end of file
+
