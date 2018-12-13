@@ -29,50 +29,34 @@ endif
 " => Plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General
-" 树形菜单
-Plugin 'scrooloose/nerdtree'
-" 颜色主题
-Plugin 'altercation/vim-colors-solarized'
+Plugin 'scrooloose/nerdtree'                 " 树形菜单
+Plugin 'altercation/vim-colors-solarized'    " 颜色主题
 Plugin 'spf13/vim-colors'
-" 括号增强插件
-Plugin 'jiangmiao/auto-pairs'
-" 快速查找
-Plugin 'ctrlpvim/ctrlp.vim'
-" 多重选取
-Plugin 'terryma/vim-multiple-cursors'
-" 成对标签跳转
-Plugin 'matchit.zip'
-" 底部状态栏
-Plugin 'vim-airline/vim-airline'
+Plugin 'jiangmiao/auto-pairs'                " 括号增强插件
+Plugin 'ctrlpvim/ctrlp.vim'                  " 快速查找
+Plugin 'terryma/vim-multiple-cursors'        " 多重选取
+Plugin 'matchit.zip'                         " 成对标签跳转
+Plugin 'vim-airline/vim-airline'             " 底部状态栏
 Plugin 'vim-airline/vim-airline-themes'
-" 在状态栏显示打开的buffer
-Plugin 'bling/vim-bufferline'
-" 快速跳转
-Plugin 'easymotion/vim-easymotion'
-" 缩进提示
-Plugin 'nathanaelkane/vim-indent-guides'
-" 基于版本管理的代码更改标示
-Plugin 'mhinz/vim-signify'
-" 搜索与替换的高亮提示
-Plugin 'osyo-manga/vim-over'
+Plugin 'bling/vim-bufferline'                " 在状态栏显示打开的buffer
+Plugin 'easymotion/vim-easymotion'           " 快速跳转
+Plugin 'nathanaelkane/vim-indent-guides'     " 缩进提示
+Plugin 'mhinz/vim-signify'                   " 基于版本管理的代码更改标示
+Plugin 'osyo-manga/vim-over'                 " 搜索与替换的高亮提示
 
 " General Programming
 " Pick one of the checksyntax, jslint, or syntastic
-" 语法检查
-Plugin 'scrooloose/syntastic'
-" 注释增强插件
-Plugin 'scrooloose/nerdcommenter'
-" 文本对齐插件，强迫症福音
-Plugin 'godlygeek/tabular'
-" 生成源码tags文件
-if executable('ctags')
+Plugin 'scrooloose/syntastic'                " 语法检查
+Plugin 'scrooloose/nerdcommenter'            " 注释增强插件
+Plugin 'godlygeek/tabular'                   " 文本对齐插件，强迫症福音
+if executable('ctags')                       " 生成源码tags文件
     Plugin 'majutsushi/tagbar'
 endif
+
 " Misc
 Plugin 'tpope/vim-markdown'
 Plugin 'edkolev/tmuxline.vim'
 
-" CMake 语法高亮
-Plugin 'pboettch/vim-cmake-syntax'
+Plugin 'pboettch/vim-cmake-syntax'          " CMake 语法高亮
 
 call vundle#end()

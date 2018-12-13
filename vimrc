@@ -35,7 +35,7 @@ set backup
 if has('persistent_undo')
     set undofile
     set undolevels=1000         " Maximum number of changes that can be undone
-    set undoreload=10000        " Maximum number lines to save for undo on a buffer reload
+    set undoreload=1000         " Maximum number lines to save for undo on a buffer reload
 endif
 
 if !has('gui')
@@ -60,7 +60,7 @@ endif
 " chose a color scheme and config options
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
-set background=light           " light or dark
+set background=dark           " light or dark
 colorscheme solarized
 
 if has('cmdline_info')
@@ -79,7 +79,7 @@ if has('statusline')
     set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
 endif
 
-set tabpagemax=15               " Only show 15 tabs
+set tabpagemax=9                " Only show 9 tabs
 set showmode                    " Display the current mode
 set cursorline                  " Highlight current line
 set backspace=indent,eol,start  " Backspace for dummies
@@ -94,8 +94,8 @@ set smartcase                   " Case sensitive when uc present
 set wildmenu                    " Show list instead of just completing
 set wildmode=list:longest,full  " Command <Tab> completion, list matches, then longest common part, then all.
 set whichwrap=b,s,h,l,<,>,[,]   " Backspace and cursor keys wrap too
-"set scrolljump=5                " Lines to scroll when cursor leaves screen
-"set scrolloff=3                 " Minimum lines to keep above and below cursor
+set scrolljump=5                " Lines to scroll when cursor leaves screen
+set scrolloff=3                 " Minimum lines to keep above and below cursor
 set foldenable                  " Auto fold code
 set list
 set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
