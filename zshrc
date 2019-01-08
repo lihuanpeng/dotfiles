@@ -90,7 +90,7 @@ if [ $(uname) = "Darwin" ]; then
     export PATH="/usr/local/mysql/bin:${PATH}"
 
     # those two lines for CUDA environment
-    CUDA_PATH="/Developer/NVIDIA/CUDA-9.2"
+    CUDA_PATH="/Developer/NVIDIA/CUDA-10.0"
     export PATH="${CUDA_PATH}/bin:${PATH}"
     export LD_LIBRARY_PATH="${CUDA_PATH}/lib:${LD_LIBRARY_PATH}"
 
@@ -104,10 +104,6 @@ if [ $(uname) = "Darwin" ]; then
 fi
 
 if [ $(uname) = "Linux" ]; then
-    # tesseract
-    export TESSDATA_PREFIX="/usr/local/share/tessdata"
-    export LD_LIBRARY_PATH="/lib:/lib64:/usr/lib:/usr/local/lib"
-
     # Qt env
     export QT_SELECT="Qt5.11.0"
     export QTDIR="/opt/Qt5.11.0/5.11.0/gcc_64"
@@ -126,14 +122,6 @@ if [ $(uname) = "Linux" ]; then
     CUDA_PATH="/usr/local/cuda"
     export PATH="${PATH}:${CUDA_PATH}/bin"
     export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${CUDA_PATH}/lib64"
-
-    if [ $(hostname) = "tes-training" ]; then
-        # set language environment
-        export LANG=en_US.UTF-8
-        export LANGUAGE=en_US.UTF-8
-        export LC_CTYPE=en_US.UTF-8
-        export LC_ALL=en_US.UTF-8
-    fi
 fi
 
 # export environments
