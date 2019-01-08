@@ -101,24 +101,6 @@ if [ $(uname) = "Darwin" ]; then
 
     # for php composer
     export PATH="/Users/lihuanpeng/.composer/vendor/bin:${PATH}"
-
-    # <<< conda init <<<
-    # added by Anaconda3 5.3.0 installer
-    # >>> conda init >>>
-    # !! Contents within this block are managed by 'conda init' !!
-    __conda_setup="$(CONDA_REPORT_ERRORS=false '/Developer/anaconda3/bin/conda' shell.bash hook 2> /dev/null)"
-    if [ $? -eq 0 ]; then
-        eval "$__conda_setup"
-    else
-        if [ -f "/Developer/anaconda3/etc/profile.d/conda.sh" ]; then
-            . "/Developer/anaconda3/etc/profile.d/conda.sh"
-            CONDA_CHANGEPS1=false conda activate base
-        else
-            export PATH="/Developer/anaconda3/bin:$PATH"
-        fi
-    fi
-    unset __conda_setup
-    # <<< conda init <<<
 fi
 
 if [ $(uname) = "Linux" ]; then
