@@ -74,6 +74,7 @@ alias ll="ls -lhGF"
 alias la="ls -lahGF"
 alias cp="cp -i"
 alias clonesite="wget -c -r -np -k -L -p"
+alias conda_init="source ~/.dotfiles/macOS/conda_init"
 
 # proxy
 export http_proxy=http://127.0.0.1:1087;
