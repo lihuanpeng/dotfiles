@@ -76,15 +76,15 @@ alias cp="cp -i"
 alias clonesite="wget -c -r -np -k -L -p"
 alias conda_init="source ~/.dotfiles/macOS/conda_init"
 
-# proxy
-export http_proxy=http://127.0.0.1:1087;
-export https_proxy=http://127.0.0.1:1087;
-
 export LINODE="192.155.83.252"
 
 # Diffrent system has diffrent configure
 # for macbook-pro with osx
 if [ $(uname) = "Darwin" ]; then
+    # proxy
+    export http_proxy=http://127.0.0.1:1087;
+    export https_proxy=http://127.0.0.1:1087;
+
     alias wwwroot="cd /Library/WebServer/Documents"
 
     # for mysql
