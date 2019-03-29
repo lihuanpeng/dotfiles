@@ -46,7 +46,7 @@ Plugin 'osyo-manga/vim-over'                 " 搜索与替换的高亮提示
 
 " General Programming
 " Pick one of the checksyntax, jslint, or syntastic
-Plugin 'scrooloose/syntastic'                " 语法检查
+Plugin 'vim-syntastic/syntastic'                " 语法检查
 Plugin 'scrooloose/nerdcommenter'            " 注释增强插件
 Plugin 'godlygeek/tabular'                   " 文本对齐插件，强迫症福音
 if executable('ctags')                       " 生成源码tags文件
