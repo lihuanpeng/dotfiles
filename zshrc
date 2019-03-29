@@ -102,6 +102,9 @@ if [ $(uname) = "Darwin" ]; then
 
     # for php composer
     export PATH="/Users/lihuanpeng/.composer/vendor/bin:${PATH}"
+
+    # for macTex
+    export PATH="${PATH}:/usr/local/texlive/2018/bin/x86_64-darwin"
 fi
 
 if [ $(uname) = "Linux" ]; then
