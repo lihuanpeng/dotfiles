@@ -122,10 +122,14 @@ if [ $(uname) = "Linux" ]; then
 
     # alias
     alias i3config="vim ~/.i3/config"
+
     # those two lines for CUDA environment
     CUDA_PATH="/usr/local/cuda"
     export PATH="${PATH}:${CUDA_PATH}/bin"
     export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${CUDA_PATH}/lib64"
+
+    # for hisi-linux- compiler
+    export PATH="/opt/hisi-linux/x86-arm/arm-hisiv500-linux/target/bin:${PATH}"
 fi
 
 # export environments
