@@ -1,7 +1,9 @@
-# debian-jessie(oldstable)
-deb http://mirrors.ustc.edu.cn/debian/ jessie main contrib non-free
-deb-src http://mirrors.ustc.edu.cn/debian/ jessie main contrib non-free
-
-# debian-wheezy(oldoldstable)
-# deb http://mirrors.ustc.edu.cn/debian/ wheezy main contrib non-free
-# deb-src http://mirrors.ustc.edu.cn/debian/ wheezy main contrib non-free
+# 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释
+deb https://mirrors.tuna.tsinghua.edu.cn/debian/ jessie main contrib non-free
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ jessie main contrib non-free
+deb https://mirrors.tuna.tsinghua.edu.cn/debian/ jessie-updates main contrib non-free
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ jessie-updates main contrib non-free
+#deb https://mirrors.tuna.tsinghua.edu.cn/debian/ jessie-backports main contrib non-free
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ jessie-backports main contrib non-free
+deb https://mirrors.tuna.tsinghua.edu.cn/debian-security jessie/updates main contrib non-free
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security jessie/updates main contrib non-free
