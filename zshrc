@@ -129,7 +129,10 @@ if [ $(uname) = "Linux" ]; then
     export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${CUDA_PATH}/lib64"
 
     # for hisi-linux- compiler
-    export PATH="/opt/hisi-linux/x86-arm/arm-hisiv500-linux/target/bin:${PATH}"
+    #export PATH="/opt/hisi-linux/x86-arm/arm-hisiv500-linux/target/bin:${PATH}"
+
+    # for android platform-tools
+    export PATH="${PATH}:/usr/local/Android/Sdk/platform-tools"
 fi
 
 # export environments
