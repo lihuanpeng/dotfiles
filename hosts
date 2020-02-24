@@ -14,11 +14,13 @@
 192.168.10.11    vcenter.vsphere.local
 192.168.10.12    freenas.local
 192.168.10.13    gitlab.local
-124.128.38.174   gitlab.remote
+
+# wechat develop
+127.0.0.1    wx.dev.local
 #<block-work>
 
 #<block-jetBrains>
-0.0.0.0 account.jetbrains.com
+127.0.0.1 account.jetbrains.com
 #</block-jetBrains>
 
 #<block-adobe>
