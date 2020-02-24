@@ -86,6 +86,7 @@ if [ $(uname) = "Darwin" ]; then
     export https_proxy=http://127.0.0.1:1087;
 
     alias wwwroot="cd /Library/WebServer/Documents"
+    alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
 
     # for mysql
     export PATH="/usr/local/mysql/bin:${PATH}"
