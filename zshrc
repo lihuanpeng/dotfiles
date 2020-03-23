@@ -82,8 +82,8 @@ export LINODE="192.155.83.252"
 # for macbook-pro with osx
 if [ $(uname) = "Darwin" ]; then
     # proxy
-    export http_proxy=http://127.0.0.1:1087;
-    export https_proxy=http://127.0.0.1:1087;
+    # export http_proxy=http://127.0.0.1:1087;
+    # export https_proxy=http://127.0.0.1:1087;
 
     alias wwwroot="cd /Library/WebServer/Documents"
     alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
