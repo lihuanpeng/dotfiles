@@ -10,13 +10,12 @@
 ::1             localhost
 
 #<block-work>
-192.168.10.10    esxi-01.vsphere.local
-192.168.10.11    vcenter.vsphere.local
-192.168.10.12    freenas.local
-192.168.10.13    gitlab.local
-
-# wechat develop
-127.0.0.1    wx.dev.local
+192.168.0.2  routeros.local
+192.168.1.1  esxi-01.vsphere.local
+192.168.1.10 vcenter.vsphere.local
+192.168.1.11 freenas.local
+192.168.1.12 gitlab.local
+192.168.8.8  wordpress.local
 #<block-work>
 
 #<block-jetBrains>
