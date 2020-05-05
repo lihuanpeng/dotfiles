@@ -12,6 +12,7 @@
 #<block-work>
 192.168.0.2  routeros.local
 192.168.1.1  routeros.local
+
 # vSphere
 192.168.1.10 vcenter.vsphere.local
 192.168.1.11 esxi-11.vsphere.local
@@ -20,10 +21,6 @@
 # virtualbox - homestead
 192.168.8.8  wordpress.local
 #<block-work>
-
-#<block-jetBrains>
-127.0.0.1 account.jetbrains.com
-#</block-jetBrains>
 
 #<block-adobe>
 127.0.0.1 activate.adobe.com
