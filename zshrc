@@ -74,18 +74,20 @@ alias ll="ls -lhGF"
 alias la="ls -lahGF"
 alias cp="cp -i"
 alias clonesite="wget -c -r -np -k -L -p"
-alias conda_init="source ~/.dotfiles/macOS/conda_init"
+alias long_ssh="ssh -o ServerAliveInterval=60 -o ServerAliveCountMax=3"
 
 export LINODE="192.155.83.252"
 
 # Diffrent system has diffrent configure
 # for macbook-pro with osx
 if [ $(uname) = "Darwin" ]; then
+    function homestead() {(cd ~/Workspace/vagrant/homestead && vagrant $*)}
     # proxy
     #export http_proxy=http://127.0.0.1:1087;
     #export https_proxy=http://127.0.0.1:1087;
     #export all_proxy=http://127.0.0.1:1087;
 
+    alias conda_init="source ~/.dotfiles/macOS/conda_init"
     alias wwwroot="cd /Library/WebServer/Documents"
     alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
 
