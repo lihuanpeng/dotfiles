@@ -6,7 +6,7 @@ app_name='dotfiles'
 [ -z "$REPO_URI" ] && REPO_URI='https://github.com/huanpenglee/dotfiles.git'
 [ -z "$REPO_BRANCH" ] && REPO_BRANCH='master'
 debug_mode='0'
-[ -z "$VUNDLE_URI" ] && VUNDLE_URI="http://github.com/VundleVim/Vundle.Vim"
+[ -z "$VUNDLE_URI" ] && VUNDLE_URI="https://github.com/VundleVim/Vundle.Vim"
 
 ############################  BASIC SETUP TOOLS
 msg() {
@@ -126,6 +126,6 @@ cp "$APP_PATH/tmux/tmux.conf.local"   "$HOME/.tmux.conf.local"
 
 sync_repo "$HOME/.vim/bundle/Vundle.vim" "$VUNDLE_URI" "master" "Vundle"
 
-setup_vundle "$APP_PATH/vimrc.bundles"
+setup_vundle "$APP_PATH/vim/vimrc.bundles"
 
 msg "\nThanks for installing $app_name."

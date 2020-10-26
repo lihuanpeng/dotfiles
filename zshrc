@@ -81,7 +81,10 @@ export LINODE="192.155.83.252"
 # Diffrent system has diffrent configure
 # for macbook-pro with osx
 if [ $(uname) = "Darwin" ]; then
+    # global homestead
+    alias vihomestead="vim ~/Workspace/vagrant/homestead/Homestead.yaml"
     function homestead() {(cd ~/Workspace/vagrant/homestead && vagrant $*)}
+
     # proxy
     #export http_proxy=http://127.0.0.1:1087;
     #export https_proxy=http://127.0.0.1:1087;
@@ -92,15 +95,16 @@ if [ $(uname) = "Darwin" ]; then
     alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
 
     # for app installed from brew
+    export PATH="/usr/local/sbin:$PATH"
     export PATH="/usr/local/opt/mysql-client/bin:$PATH"
     export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
     export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
     export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
 
     # those two lines for CUDA environment
-    CUDA_PATH="/Developer/NVIDIA/CUDA-10.0"
-    export PATH="${CUDA_PATH}/bin:${PATH}"
-    export LD_LIBRARY_PATH="${CUDA_PATH}/lib:${LD_LIBRARY_PATH}"
+    # CUDA_PATH="/Developer/NVIDIA/CUDA-10.0"
+    # export PATH="${CUDA_PATH}/bin:${PATH}"
+    # export LD_LIBRARY_PATH="${CUDA_PATH}/lib:${LD_LIBRARY_PATH}"
 
     # for Qt env
     export QTDIR="/Applications/Qt5.12.0/5.12.0/clang_64"
