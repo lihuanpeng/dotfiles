@@ -75,6 +75,7 @@ alias la="ls -lahGF"
 alias cp="cp -i"
 alias clonesite="wget -c -r -np -k -L -p"
 alias long_ssh="ssh -o ServerAliveInterval=60 -o ServerAliveCountMax=3"
+alias vagrant-plugin-install="vagrant plugin install --plugin-clean-sources --plugin-source"
 
 export LINODE="192.155.83.252"
 
