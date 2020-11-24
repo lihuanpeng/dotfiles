@@ -54,7 +54,7 @@ PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 MANPATH="/usr/local/man:${MANPATH}"
 
 # ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
+export SSH_KEY_PATH="~/.ssh/id_rsa"
 
 # set language environment
 # export LANG=zh_CN.UTF-8
