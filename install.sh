@@ -118,7 +118,6 @@ do_backup "$HOME/.tmux.conf"
 do_backup "$HOME/.gitconfig"
 
 msg "\nCreate symlinks."
-lnif "$APP_PATH/spf13-vim-3/vim"               "$HOME/.vim"
 lnif "$APP_PATH/spf13-vim-3/vimrc"             "$HOME/.vimrc"
 lnif "$APP_PATH/spf13-vim-3/vimrc.bundles"     "$HOME/.vimrc.bundles"
 lnif "$APP_PATH/spf13-vim-3/vimrc.before"      "$HOME/.vimrc.before"
