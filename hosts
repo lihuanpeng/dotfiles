@@ -9,18 +9,15 @@
 255.255.255.255	broadcasthost
 ::1             localhost
 
-#<block-work>
-192.168.0.2  routeros.local
-192.168.1.1  routeros.local
+# <develop>
 
-# vSphere
-192.168.1.10 vcenter.vsphere.local
-192.168.1.11 esxi-11.vsphere.local
-192.168.1.30 freenas.local
-192.168.1.31 gitlab.local
-# virtualbox - homestead
-192.168.8.8  wordpress.local
-#<block-work>
+# My vSphere
+192.168.1.10    esxi.vsphere.local
+192.168.1.30    freenas.local
+
+# Homestead
+192.168.10.10  homestead.test
+#</develop>
 
 #<block-adobe>
 127.0.0.1 activate.adobe.com
