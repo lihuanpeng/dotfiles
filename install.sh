@@ -106,7 +106,7 @@ setup_vundle() {
 variable_set "$HOME"
 program_must_exist "vim"
 program_must_exist "git"
-program_must_exist "tmux"
+#program_must_exist "tmux"
 program_must_exist "zsh"
 
 do_backup "$HOME/.vim"
@@ -115,18 +115,16 @@ do_backup "$HOME/.vimrc.bundles"
 do_backup "$HOME/.vimrc.before"
 do_backup "$HOME/.zhsrc"
 do_backup "$HOME/.tmux.conf"
-do_backup "$HOME/.gitconfig"
 
 msg "\nCreate symlinks."
 lnif "$APP_PATH/spf13-vim-3/vimrc"             "$HOME/.vimrc"
 lnif "$APP_PATH/spf13-vim-3/vimrc.bundles"     "$HOME/.vimrc.bundles"
 lnif "$APP_PATH/spf13-vim-3/vimrc.before"      "$HOME/.vimrc.before"
 lnif "$APP_PATH/zshrc"                 "$HOME/.zshrc"
-lnif "$APP_PATH/gitconfig"             "$HOME/.gitconfig"
 lnif "$APP_PATH/tmux/tmux.conf"        "$HOME/.tmux.conf"
 cp   "$APP_PATH/tmux/tmux.conf.local"  "$HOME/.tmux.conf.local"
 
-sync_repo "$HOME/.vim/bundle/Vundle.vim" "$VUNDLE_URI" "master" "Vundle"
+sync_repo "$HOME/.vim/bundle/Vundle" "$VUNDLE_URI" "master" "Vundle"
 
 setup_vundle "$APP_PATH/spf13-vim-3/vimrc.bundles"
 

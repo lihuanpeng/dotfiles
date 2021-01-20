@@ -45,7 +45,13 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git osx)
+if [ $(uname) = "Linux" ]; then
+    plugins=(git debian)
+fi
+
+if [ $(uname) = "Darwin" ]; then
+    plugins=(git osx)
+fi
 
 source ${ZSH}/oh-my-zsh.sh
 
@@ -53,6 +59,9 @@ source ${ZSH}/oh-my-zsh.sh
 PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 MANPATH="/usr/local/man:${MANPATH}"
 
+# global config
+export LINODE="192.155.83.252"
+export REPO_URL='https://mirrors.tuna.tsinghua.edu.cn/git/git-repo/'
 # ssh
 export SSH_KEY_PATH="~/.ssh/id_rsa"
 
@@ -63,10 +72,7 @@ export SSH_KEY_PATH="~/.ssh/id_rsa"
 # export LC_ALL=zh_CN.UTF-8
 
 # set default editor
-export EDITOR='vim'
-
-# Compilation flags
-export ARCHFLAGS="-arch x86_64"
+export EDITOR="vim"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes.
@@ -77,11 +83,19 @@ alias clonesite="wget -c -r -np -k -L -p"
 alias long_ssh="ssh -o ServerAliveInterval=60 -o ServerAliveCountMax=3"
 alias vagrant-plugin-install="vagrant plugin install --plugin-clean-sources --plugin-source"
 
-export LINODE="192.155.83.252"
-
-# Diffrent system has diffrent configure
-# for macbook-pro with osx
+# for macOS
 if [ $(uname) = "Darwin" ]; then
+    # for diffrent arch config
+    if [ $(arch) = "arm64" ]; then
+        export ARCHFLAGS="-arch arm64"
+        # homebrew installed apps on arm64
+        export PATH="/opt/homebrew/bin:$PATH"
+    else
+        export ARCHFLAGS="-arch x86_64"
+        # homebrew installed apps on x86_64
+        export PATH="/usr/local/sbin:$PATH"
+    fi
+
     # global homestead
     alias vihomestead="vim ~/Workspace/vagrant/homestead/Homestead.yaml"
     function homestead() {(cd ~/Workspace/vagrant/homestead && vagrant $*)}
@@ -95,60 +109,33 @@ if [ $(uname) = "Darwin" ]; then
     alias wwwroot="cd /Library/WebServer/Documents"
     alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
 
-    # for app installed from brew
-    export PATH="/usr/local/sbin:$PATH"
-    export PATH="/usr/local/opt/mysql-client/bin:$PATH"
-    export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
-    export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
-    export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
-
-    # those two lines for CUDA environment
-    # CUDA_PATH="/Developer/NVIDIA/CUDA-10.0"
-    # export PATH="${CUDA_PATH}/bin:${PATH}"
-    # export LD_LIBRARY_PATH="${CUDA_PATH}/lib:${LD_LIBRARY_PATH}"
-
     # for Qt env
-    export QTDIR="/Applications/Qt5.12.0/5.12.0/clang_64"
+    export QTDIR="/Applications/Qt6/6.0.0/clang_64"
     export PATH="${QTDIR}/bin:${PATH}"
     export LD_LIBRARY_PATH="${QTDIR}/lib:${LD_LIBRARY_PATH}"
 
     # for php composer
     export PATH="/Users/lihuanpeng/.composer/vendor/bin:${PATH}"
-
-    # for macTex
-    export PATH="${PATH}:/usr/local/texlive/2018/bin/x86_64-darwin"
 fi
 
+# Linux config
 if [ $(uname) = "Linux" ]; then
-    # Qt env
-    export QT_SELECT="Qt5.12.0"
-    export QTDIR="/opt/Qt5.12.0/5.12.0/gcc_64"
-    export PATH="${QTDIR}/bin:${PATH}"
-    export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${QTDIR}/lib"
-
     # for java
-    export JAVA_HOME="/usr/lib/jvm/default-java"
-    export JRE_HOME="${JAVA_HOME}/jre"
-    export CLASSPATH="${JAVA_HOME}/lib:${JRE_HOME}/lib"
-    export PATH="${JAVA_HOME}/bin:${PATH}"
+    # export JAVA_HOME="/usr/lib/jvm/default-java"
+    # export JRE_HOME="${JAVA_HOME}/jre"
+    # export CLASSPATH="${JAVA_HOME}/lib:${JRE_HOME}/lib"
+    # export PATH="${JAVA_HOME}/bin:${PATH}"
 
     # alias
-    alias i3config="vim ~/.i3/config"
-
-    # those two lines for CUDA environment
-    CUDA_PATH="/usr/local/cuda"
-    export PATH="${PATH}:${CUDA_PATH}/bin"
-    export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${CUDA_PATH}/lib64"
+    # alias i3config="vim ~/.i3/config"
 
     # for hisi-linux- compiler
     #export PATH="/opt/hisi-linux/x86-arm/arm-hisiv500-linux/target/bin:${PATH}"
 
     # for android platform-tools
-    export PATH="${PATH}:/usr/local/Android/Sdk/platform-tools"
+    # export PATH="${PATH}:/usr/local/Android/Sdk/platform-tools"
 fi
 
-# export environments
-export REPO_URL='https://mirrors.tuna.tsinghua.edu.cn/git/git-repo/'
 
 #end of file
 
