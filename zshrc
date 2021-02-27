@@ -81,7 +81,6 @@ alias la="ls -lahGF"
 alias cp="cp -i"
 alias clonesite="wget -c -r -np -k -L -p"
 alias long_ssh="ssh -o ServerAliveInterval=60 -o ServerAliveCountMax=3"
-alias vagrant-plugin-install="vagrant plugin install --plugin-clean-sources --plugin-source"
 
 # for macOS
 if [ $(uname) = "Darwin" ]; then
@@ -95,10 +94,6 @@ if [ $(uname) = "Darwin" ]; then
         # homebrew installed apps on x86_64
         export PATH="/usr/local/sbin:$PATH"
     fi
-
-    # global homestead
-    alias vihomestead="vim ~/Workspace/vagrant/homestead/Homestead.yaml"
-    function homestead() {(cd ~/Workspace/vagrant/homestead && vagrant $*)}
 
     # proxy
     #export http_proxy=http://127.0.0.1:1087;
