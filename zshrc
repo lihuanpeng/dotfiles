@@ -88,11 +88,11 @@ if [ $(uname) = "Darwin" ]; then
     if [ $(arch) = "arm64" ]; then
         export ARCHFLAGS="-arch arm64"
         # homebrew installed apps on arm64
-        export PATH="/opt/homebrew/bin:$PATH"
+        export PATH="$PATH:/opt/homebrew/bin"
     else
         export ARCHFLAGS="-arch x86_64"
         # homebrew installed apps on x86_64
-        # export PATH="/usr/local/bin:$PATH" # 上面已经添加了这个路径
+        export PATH="$PATH:/usr/local/sbin"
     fi
 
     # proxy
