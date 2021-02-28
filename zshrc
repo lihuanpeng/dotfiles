@@ -61,7 +61,7 @@ MANPATH="/usr/local/man:${MANPATH}"
 
 # global config
 export LINODE="192.155.83.252"
-export REPO_URL='https://mirrors.tuna.tsinghua.edu.cn/git/git-repo/'
+
 # ssh
 export SSH_KEY_PATH="~/.ssh/id_rsa"
 
@@ -92,7 +92,7 @@ if [ $(uname) = "Darwin" ]; then
     else
         export ARCHFLAGS="-arch x86_64"
         # homebrew installed apps on x86_64
-        export PATH="/usr/local/sbin:$PATH"
+        # export PATH="/usr/local/bin:$PATH" # 上面已经添加了这个路径
     fi
 
     # proxy
