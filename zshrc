@@ -95,10 +95,13 @@ if [ $(uname) = "Darwin" ]; then
         export PATH="$PATH:/usr/local/sbin"
     fi
 
+    # 关闭 Homebrew 自动更新
+    export HOMEBREW_NO_AUTO_UPDATE=true
+
     # proxy
-    #export http_proxy=http://127.0.0.1:1087;
-    #export https_proxy=http://127.0.0.1:1087;
-    #export all_proxy=http://127.0.0.1:1087;
+    # export http_proxy=http://127.0.0.1:1087;
+    # export https_proxy=http://127.0.0.1:1087;
+    # export all_proxy=http://127.0.0.1:1087;
 
     alias conda_init="source ~/.dotfiles/macOS/conda_init"
     alias wwwroot="cd /Library/WebServer/Documents"
@@ -106,11 +109,11 @@ if [ $(uname) = "Darwin" ]; then
 
     # for Qt env
     export QTDIR="/Applications/Qt6/6.0.0/clang_64"
-    export PATH="${QTDIR}/bin:${PATH}"
-    export LD_LIBRARY_PATH="${QTDIR}/lib:${LD_LIBRARY_PATH}"
+    export PATH="$PATH:$QTDIR/bin"
+    export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$QTDIR/lib"
 
     # for php composer
-    export PATH="/Users/lihuanpeng/.composer/vendor/bin:${PATH}"
+    export PATH="$PATH:/Users/lihuanpeng/.composer/vendor/bin"
 fi
 
 # Linux config
