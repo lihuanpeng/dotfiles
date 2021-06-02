@@ -60,7 +60,8 @@ PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 MANPATH="/usr/local/man:${MANPATH}"
 
 # global config
-export LINODE="192.155.83.252"
+export QM_LINODE="192.155.83.252"
+export QM_ALI="8.136.222.148"
 
 # ssh
 export SSH_KEY_PATH="~/.ssh/id_rsa"
@@ -80,7 +81,7 @@ alias ll="ls -lhGF"
 alias la="ls -lahGF"
 alias cp="cp -i"
 alias clonesite="wget -c -r -np -k -L -p"
-alias long_ssh="ssh -o ServerAliveInterval=60 -o ServerAliveCountMax=3"
+alias longssh="ssh -o ServerAliveInterval=60 -o ServerAliveCountMax=3"
 
 # for macOS
 if [ $(uname) = "Darwin" ]; then
