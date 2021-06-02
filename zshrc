@@ -112,8 +112,8 @@ if [ $(uname) = "Darwin" ]; then
     export PATH="$PATH:$QTDIR/bin"
     export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$QTDIR/lib"
 
-    # for php composer
-    export PATH="$PATH:/Users/lihuanpeng/.composer/vendor/bin"
+    # for jdk
+    export PATH="/usr/local/opt/openjdk@11/bin:$PATH"
 fi
 
 # Linux config
