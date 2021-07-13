@@ -107,6 +107,7 @@ if [ $(uname) = "Darwin" ]; then
     alias conda_init="source ~/.dotfiles/macOS/conda_init"
     alias wwwroot="cd /Library/WebServer/Documents"
     alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
+    alias start_redis="redis-server /usr/local/etc/redis.conf"
 
     # for Qt env
     export QTDIR="/Applications/Qt6/6.0.0/clang_64"
