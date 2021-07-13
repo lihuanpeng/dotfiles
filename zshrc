@@ -60,8 +60,8 @@ PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 MANPATH="/usr/local/man:${MANPATH}"
 
 # global config
-export QM_LINODE="192.155.83.252"
-export QM_ALI="8.136.222.148"
+export LINODE="192.155.83.252"
+export AliYun="8.136.222.148"
 
 # ssh
 export SSH_KEY_PATH="~/.ssh/id_rsa"
@@ -104,7 +104,7 @@ if [ $(uname) = "Darwin" ]; then
     # export https_proxy=http://127.0.0.1:1087;
     # export all_proxy=http://127.0.0.1:1087;
 
-    alias conda_init="source ~/.dotfiles/macOS/conda_init"
+    # alias conda_init="source ~/.dotfiles/macOS/conda_init"
     alias wwwroot="cd /Library/WebServer/Documents"
     alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
     alias start_redis="redis-server /usr/local/etc/redis.conf"
