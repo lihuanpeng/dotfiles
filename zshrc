@@ -85,6 +85,11 @@ alias longssh="ssh -o ServerAliveInterval=60 -o ServerAliveCountMax=3"
 
 # for macOS
 if [ $(uname) = "Darwin" ]; then
+    # 关闭 Homebrew 自动更新
+    export HOMEBREW_NO_AUTO_UPDATE=true
+    # 替换 brew bintray 镜像为阿里云源
+    export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles
+
     # for diffrent arch config
     if [ $(arch) = "arm64" ]; then
         export ARCHFLAGS="-arch arm64"
@@ -100,10 +105,6 @@ if [ $(uname) = "Darwin" ]; then
         alias start_redis="redis-server /usr/local/etc/redis.conf"
     fi
 
-    # 关闭 Homebrew 自动更新
-    export HOMEBREW_NO_AUTO_UPDATE=true
-    # 替换 brew bintray 镜像为阿里云源
-    export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles
 
     # proxy
     # export http_proxy=http://127.0.0.1:1087;
@@ -113,7 +114,7 @@ if [ $(uname) = "Darwin" ]; then
     # 打开本机apache服务器的默认root路径
     alias wwwroot="cd /Library/WebServer/Documents"
     # 解决微信开发者工具访问网络跨域问题
-    alias wxdevtools="open -n /Applications/wechatwebdevtools.app/ --args --disable-web-security --user-data-dir --allow-running-insecure-content"
+    alias open_wxdevtools="open -n /Applications/wechatwebdevtools.app/ --args --disable-web-security --user-data-dir --allow-running-insecure-content"
 
     # for Qt env
     export QTDIR="/Applications/Qt6/6.0.0/clang_64"
