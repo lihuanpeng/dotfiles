@@ -104,9 +104,12 @@ if [ $(uname) = "Darwin" ]; then
     # export https_proxy=http://127.0.0.1:1087;
     # export all_proxy=http://127.0.0.1:1087;
 
-    # alias conda_init="source ~/.dotfiles/macOS/conda_init"
+    # 打开本机apache服务器的默认root路径
     alias wwwroot="cd /Library/WebServer/Documents"
-    alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
+    # 命令行阻塞方式打开redis服务
+    alias start_redis="redis-server /usr/local/etc/redis.conf"
+    # 解决微信开发者工具访问网络跨域问题
+    alias wxdevtools="open -n /Applications/wechatwebdevtools.app/ --args --disable-web-security --user-data-dir --allow-running-insecure-content"
 
     # for Qt env
     export QTDIR="/Applications/Qt6/6.0.0/clang_64"
