@@ -61,7 +61,9 @@ MANPATH="/usr/local/man:${MANPATH}"
 
 # global config
 export LINODE="192.155.83.252"
-export AliYun="8.136.222.148"
+export ALIYUN_MASTER_PEM_PATH="/Users/lihuanpeng/Public/aliyun_ssh_key_master.pem"
+export ALIYUN_QIANMIAN="8.136.222.148"
+export ALIYUN_LUJIAN="121.41.192.176"
 
 # ssh
 export SSH_KEY_PATH="~/.ssh/id_rsa"
@@ -82,6 +84,15 @@ alias la="ls -lahGF"
 alias cp="cp -i"
 alias clonesite="wget -c -r -np -k -L -p"
 alias longssh="ssh -o ServerAliveInterval=60 -o ServerAliveCountMax=3"
+
+function ssh_aliyun_qianmian() {
+    ssh-add -k ${ALIYUN_MASTER_PEM_PATH}
+    longssh root@${ALIYUN_QIANMIAN}
+}
+
+function ssh_aliyun_lujian() {
+    longssh root@${ALIYUN_LUJIAN}
+}
 
 # for macOS
 if [ $(uname) = "Darwin" ]; then
