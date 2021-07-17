@@ -64,6 +64,7 @@ export LINODE="192.155.83.252"
 export ALIYUN_MASTER_PEM_PATH="/Users/lihuanpeng/Public/aliyun_ssh_key_master.pem"
 export ALIYUN_QIANMIAN="8.136.222.148"
 export ALIYUN_LUJIAN="121.41.192.176"
+export KZW_JUMP_SERVER="120.192.90.90"
 
 # ssh
 export SSH_KEY_PATH="~/.ssh/id_rsa"
