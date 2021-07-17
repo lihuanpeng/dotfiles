@@ -31,8 +31,10 @@
 	</data>
 	<key>FontAntialias</key>
 	<false/>
+	<key>FontHeightSpacing</key>
+	<integer>1</integer>
 	<key>FontWidthSpacing</key>
-	<real>0.99596774193548387</real>
+	<integer>1</integer>
 	<key>ProfileCurrentVersion</key>
 	<real>2.0699999999999998</real>
 	<key>SelectionColor</key>
@@ -62,7 +64,7 @@
 	eYCMjpCVoKmxtAAAAAAAAAEBAAAAAAAAABkAAAAAAAAAAAAAAAAAAAC9
 	</data>
 	<key>columnCount</key>
-	<integer>96</integer>
+	<integer>80</integer>
 	<key>name</key>
 	<string>Pro</string>
 	<key>shellExitAction</key>
