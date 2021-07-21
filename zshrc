@@ -85,7 +85,7 @@ alias la="ls -lahGF"
 alias cp="cp -i"
 alias clonesite="wget -c -r -np -k -L -p"
 alias longssh="ssh -o ServerAliveInterval=60 -o ServerAliveCountMax=3"
-alias mount_am3358="mount_nfs -o nolock 192.168.2.155:/home/lihuanpeng/am3358 ~/Workspace/others/am3358"
+alias mount_am3358="mount_nfs -o nolock 192.168.2.12:/home/lihuanpeng/am3358 ~/Workspace/others/am3358"
 
 function ssh_aliyun_qianmian() {
     ssh-add -k ${ALIYUN_MASTER_PEM_PATH}
